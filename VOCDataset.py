@@ -4,10 +4,7 @@ import PIL
 import os
 import numpy
 import torch
-
 import albumentations as A
-import random
-
 
 class VOCdataset:
     def __init__(self, split='train', root='datasets',
