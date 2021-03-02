@@ -81,10 +81,11 @@ class CRP(torch.nn.Module):
 class LightRefineNet(torch.nn.Module):
     def __init__(self, activation=torch.nn.ReLU,
                  normalization=torch.nn.BatchNorm2d,
+                 backbone='efficientnet-b0',
                  n_classes=20):
         super().__init__()
         self.backbone = smp.encoders.get_encoder(
-            'efficientnet-b0', weights='imagenet')
+            backbone, weights='imagenet')
 
         self.decoder = []
 
